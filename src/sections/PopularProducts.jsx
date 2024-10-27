@@ -1,8 +1,11 @@
-import React from 'react'
+import { products } from "../constants"
 
-function PopularProducts() {
+
+const PopularProducts = () => {
   return (
-    <div>PopularProducts</div>
+    <section>
+      
+    </section>
   )
 }
 
