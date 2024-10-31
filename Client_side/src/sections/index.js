@@ -6,7 +6,7 @@ import SpecialOffer from "./SpecialOffer";
 import CustomerReviews from "./CustomerReviews";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
-
+// import FullPage from "./fullPage";
 export {
     Hero,
     PopularProducts,
@@ -16,4 +16,5 @@ export {
     CustomerReviews,
     Subscribe,
     Footer,
+    // FullPage,                                                                               
 }
