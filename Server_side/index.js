@@ -15,19 +15,24 @@ app.post('/sign-up',(req, res) => {
 })
 
 app.post('/login',(req, res) => {
-    const {email,password} = req.body
-    UserModel.findOne({email:email})
-    .then(users => {
-        if(users){
-            if(users.password === password){
-                res.json({message: "success"})
-                }else{
-                res.json({message: "Incorrect password"})
+    try{
+        const {email,password} = req.body
+        UserModel.findOne({email:email})
+        .then(users => {
+            if(users){
+                if(users.password === password){
+                    res.json({message: "success"})
+                    }else{
+                    res.json({message: "Incorrect password"})
+                }
+            }else{
+                res.json({msg: 'User not found'})
             }
-        }else{
-            res.json({msg: 'User not found'})
-        }
-    }) 
+        }) 
+    } catch(err) {
+        res.json({err})
+    }
+    
 })
 
 

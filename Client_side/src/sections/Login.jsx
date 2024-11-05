@@ -10,17 +10,22 @@ function Login() {
   const [password, setPassword] = useState()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/login',{email,password })
-    .then(result => {console.log(result)
-        if (result.data.message === "success") {
-            navigate('/')
-        }else{
-            console.log(result.data.message)
-        }
-    }) 
-    .catch(error => console.log(error))
+    try {
+       const res = await axios.post('http://localhost:3000/login',{email,password })
+           if(res.data.message === 'success'){
+             navigate('/')
+            //  console.log('Login success')
+           } else{
+            alert('Login failed')
+           }
+    } catch (error) {
+        console.log(error)
+        alert('Network error, try again')
+    }
+ 
+    
   }
 
   return (
