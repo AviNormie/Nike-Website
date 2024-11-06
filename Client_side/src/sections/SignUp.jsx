@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 function SignUp() {
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -13,7 +13,7 @@ const navigate = useNavigate()
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  axios.post(`${BACKEND_URL}/sign-up`, { name, email, password })
+  axios.post(`nike-website-api.vercel.app/sign-up`, { name, email, password })
     .then(result => {
       console.log(result);
       navigate('/login');

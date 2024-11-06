@@ -7,12 +7,12 @@ function Login() {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+  // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${BACKEND_URL}/login`, { email, password });
+      const res = await axios.post(`nike-website-api.vercel.app/login`, { email, password });
       if (res.data.message === 'success') {
         navigate('/');
       } else {
