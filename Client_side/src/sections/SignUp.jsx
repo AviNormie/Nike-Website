@@ -13,7 +13,7 @@ const navigate = useNavigate()
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  axios.post(`nike-website-api.vercel.app/sign-up`, { name, email, password })
+  axios.post('localhost:27017/Nike-Website/SignUp', { name, email, password })
     .then(result => {
       console.log(result);
       navigate('/login');

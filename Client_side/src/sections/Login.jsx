@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`nike-website-api.vercel.app/login`, { email, password });
+      const res = await axios.post('localhost:27017/Nike-Website/login', { email, password });
       if (res.data.message === 'success') {
         navigate('/');
       } else {
