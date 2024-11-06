@@ -5,22 +5,19 @@ import { useNavigate } from 'react-router-dom'
 
 
 function SignUp() {
-  // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 const navigate = useNavigate()
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  axios.post('localhost:27017/Nike-Website/SignUp', { name, email, password })
-    .then(result => {
-      console.log(result);
-      navigate('/login');
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:3000/sign-up',{name,email,password })
+    .then(result => {console.log(result)
+      navigate('/login')
     })
-    .catch(error => console.log(error));
-};
-
+    .catch(error => console.log(error))
+  }
 
   return (
     <div className="flex h-screen justify-center items-center "  >     
