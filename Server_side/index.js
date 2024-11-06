@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Use environment variable for MongoDB connection URI
+// Use environment variable for MongoDB connection UR
 const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Nike'; 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
